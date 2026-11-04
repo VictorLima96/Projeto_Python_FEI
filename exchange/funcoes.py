@@ -7,6 +7,7 @@
 
 import os
 import random
+import getpass
 from datetime import datetime
 
 ENCODING = "utf-8"
@@ -250,7 +251,7 @@ def pedir_cpf():
 
 def pedir_senha():
     for tentativa in range(3):
-        senha = input("Senha (6 dígitos): ").strip()
+        senha = getpass.getpass("Senha (6 dígitos): ").strip()
 
         if len(senha) == 6 and senha.isdigit():
             return senha
@@ -292,7 +293,7 @@ def escolher_moeda(moedas):
 def confirmar_senha(cpf, investidores):
     # usada no saldo, extrato, compra e venda (o login já foi feito antes)
     for tentativa in range(3):
-        senha = input("Digite sua senha (6 dígitos): ").strip()
+        senha = getpass.getpass("Digite sua senha (6 dígitos): ").strip()
 
         if senha == investidores[cpf]["senha"]:
             return True
