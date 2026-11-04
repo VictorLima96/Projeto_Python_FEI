@@ -1,0 +1,205 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 10
+Listas Aninhadas e Matrizes
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 29
+--- page 2 ---
+Matrizes
+Listas aninhadas
+2 / 29
+--- page 3 ---
+Matrizes
+Listas aninhadas
+3 / 29
+--- page 4 ---
+Matrizes
+Listas aninhadas
+4 / 29
+--- page 5 ---
+Matrizes
+Listas aninhadas
+5 / 29
+--- page 6 ---
+Matrizes
+Listas aninhadas
+6 / 29
+--- page 7 ---
+Matrizes
+Exercício 01
+Crie 3 listas:
+▶ Inteiros: a primeira lista com 10 números inteiros gerados
+aleatoriamente
+▶ Reais: a segunda lista com 5 números reais gerados
+aleatoriamente
+▶ Strings: A terceira lista com 7 strings criadas por você.
+Então adicione as 3 listas a uma lista única, chamada
+completa.
+Apague todas as 3 listas originais.
+Acesse e mostre todos os elementos da lista completa.
+Use:
+from random import randint, random
+print(randint(0, 10))
+print(random() * 10)
+7 / 29
+--- page 8 ---
+Matrizes
+Exercício 01
+Exemplo de execução:
+1 Inteiros: [6, 4, 1, 7, 7, 5, 7, 9, 2, 9]
+2 Reais: [3.3097066174654133, 7.2778284793150405, 1.4864531817046411,
+2.472870035139665, 0.9112878158861326]
+3 Strings: [’a’, ’b’, ’c’, ’d’, ’e’, ’f’, ’g’]
+4 Completa: [[6, 4, 1, 7, 7, 5, 7, 9, 2, 9], [3.3097066174654133,
+7.2778284793150405, 1.4864531817046411, 2.472870035139665,
+0.9112878158861326], [’a’, ’b’, ’c’, ’d’, ’e’, ’f’, ’g’]]
+8 / 29
+--- page 9 ---
+Matrizes
+9 / 29
+--- page 10 ---
+Matrizes
+10 / 29
+--- page 11 ---
+Matrizes
+11 / 29
+--- page 12 ---
+Matrizes
+12 / 29
+--- page 13 ---
+Matrizes
+Listas aninhadas podem ser utilizadas para representar
+matrizes
+Uma matriz é um caso específico de lista aninhada
+13 / 29
+--- page 14 ---
+Matrizes
+14 / 29
+--- page 15 ---
+Matrizes
+15 / 29
+--- page 16 ---
+Matrizes
+16 / 29
+--- page 17 ---
+Matrizes
+17 / 29
+--- page 18 ---
+Matrizes
+18 / 29
+--- page 19 ---
+Matrizes
+19 / 29
+--- page 20 ---
+Matrizes
+20 / 29
+--- page 21 ---
+Matrizes
+Exercício 02
+Faça um programa que cria uma matriz M 10 X 15, sendo que cada
+elemento é um inteiro gerado aleatoriamente.
+Então, exiba a matriz completa e, na sequência, somente os
+elementos da primeira coluna da matriz.
+Exemplo de execução:
+21 / 29
+--- page 22 ---
+Matrizes
+Exercício 03
+Faça um programa para receber uma matriz 3 X 3 (solicitar ao
+usuário)
+Apresentar a soma dos elementos da diagonal principal
+Exemplo de execução:
+22 / 29
+--- page 23 ---
+Matrizes
+Exercício 04
+Solicitar dados de uma matriz 4 X 4
+Montar uma lista de 4 elementos com a soma dos elementos
+ímpares de cada linha da matriz
+Exemplo de execução:
+23 / 29
+--- page 24 ---
+Matrizes
+Exercício 05
+Faça um programa que cria um matriz A 10 X 5 com números
+inteiros aleatórios e, então, exiba a matriz transposta de
+A(At)
+Determinar a transposta de uma matriz é reescrevê-la de forma
+que suas linhas e colunas troquem de posições ordenadamente,
+isto é, a primeira linha é reescrita como a primeira coluna, a
+segunda linha é reescrita como a segunda coluna e assim por
+diante, até que se termine de reescrever todas as linhas na
+forma de coluna.
+Exemplo de execução:
+24 / 29
+--- page 25 ---
+Matrizes
+Exercício 06
+Cria uma matriz m[12][12] com números inteiros aleatórios.
+Em seguida, calcule e mostre a soma ou a média considerando
+somente aqueles elementos que estão abaixo da diagonal
+principal da matriz, conforme ilustrado abaixo (área verde).
+A entrada do programa deve ser um único caractere maiúsculo
+’S’ ou ’M’, indicando a operação (Soma ou Média) que deverá
+ser realizada com os elementos da matriz.
+25 / 29
+--- page 26 ---
+Matrizes
+Exercício 06
+Exemplo de execução:
+26 / 29
+--- page 27 ---
+Matrizes
+Exercício 07
+Faça um programa que preencha uma matriz 10 X 3 com as notas
+de 10 alunos com 3 provas (valores gerados de forma aleatória
+entre 0 e 10).
+O programa deverá mostrar:
+▶ A matriz com todas as notas de cada aluno.
+▶ Um relatório com o número do aluno (número da linha), a prova em
+que cada aluno obteve a menor nota (número da coluna) e o valor
+da menor nota.
+▶ O relatório deverá mostrar também qual foi a menor nota obtida
+em cada prova e a quantidade de alunos que obtiveram essa menor
+nota na respectiva prova.
+27 / 29
+--- page 28 ---
+Matrizes
+Exercício 07
+Exemplo de execução:
+1 5 0 8
+2 4 6 0
+3 9 8 8
+4 3 0 5
+5 4 4 3
+6 4 2 5
+7 6 9 1
+8 9 0 6
+9 5 9 3
+10 5 7 5
+1 Aluno 0 : menor nota: 0 , idx: 1
+2 Aluno 1 : menor nota: 0 , idx: 2
+3 Aluno 2 : menor nota: 8 , idx: 1
+4 Aluno 3 : menor nota: 0 , idx: 1
+5 Aluno 4 : menor nota: 3 , idx: 2
+6 Aluno 5 : menor nota: 2 , idx: 1
+7 Aluno 6 : menor nota: 1 , idx: 2
+8 Aluno 7 : menor nota: 0 , idx: 1
+9 Aluno 8 : menor nota: 3 , idx: 2
+10 Aluno 9 : menor nota: 5 , idx: 0
+1 Menor nota na prova 0 - 3 alunos com essa nota: 1
+2 Menor nota na prova 1 - 0 alunos com essa nota: 3
+3 Menor nota na prova 2 - 0 alunos com essa nota: 1
+28 / 29
+--- page 29 ---
+Fundamentos de Algoritmos
+Aula 10
+Listas Aninhadas e Matrizes
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+29 / 29

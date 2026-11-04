@@ -1,0 +1,228 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 11
+Dicionários
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 32
+--- page 2 ---
+Dicionários
+O Dicionário é uma estrutura de dados
+Estruturas de dados são maneiras de organizar os dados
+Listas e Tuplas também são estruturas de dados
+2 / 32
+--- page 3 ---
+Dicionários
+Dicionários (em Python) são vetores associativos
+Vetores associativos são coleções desordenadas de dados
+São usadas para armazenar valores como um mapa por meio de
+elementos formados pelo par chave e valor
+3 / 32
+--- page 4 ---
+Dicionários
+Assim, diferentemente das listas ou tuplas, que contém um
+único valor como elemento, o dicionário contém o par
+chave:valor (key:value)
+Chave (key) : serve para deixar o dicionário otimizado
+Valor (value) : valor do elemento associado a uma chave
+4 / 32
+--- page 5 ---
+Dicionários
+Dicionários diferem das listas essencialmente na maneira como
+os elementos são acessados:
+Listas: valores são acessados por sua posição dentro da
+lista, via índice
+Dicionários: valores são acessados por meio de suas chaves
+(keys)
+5 / 32
+--- page 6 ---
+Dicionários
+Um dicionário em Python funciona de forma semelhante ao
+dicionário de palavras:
+As chaves (keys) de um dicionário devem ser exclusivas e com o
+tipo de dados imutáveis, como strings, inteiros ou tuplas
+Porém, os valores (values) associados às chaves podem ser
+repetidos e de qualquer tipo
+6 / 32
+--- page 7 ---
+Dicionários
+Para criarmos um dicionário, devemos incluir uma sequência de
+elementos dentro de chaves { }, separados por vírgula.
+A chave e o valor são separados por dois pontos:
+Cada elemento do dicionário é um par compost por chave (key) e
+valor (value).
+7 / 32
+--- page 8 ---
+Dicionários
+Sintaxe
+8 / 32
+--- page 9 ---
+Dicionários
+Exemplos
+Criar um dicionário com chaves inteiras;
+9 / 32
+--- page 10 ---
+Dicionários
+Exemplos
+Criar um dicionário com chaves de tipos diferentes;
+10 / 32
+--- page 11 ---
+Dicionários
+Exemplos
+Acessar valores
+11 / 32
+--- page 12 ---
+Dicionários
+Exemplos
+Acessar valores com .get()
+12 / 32
+--- page 13 ---
+Dicionários
+Exemplos
+Adicionar elementos
+13 / 32
+--- page 14 ---
+Dicionários
+Exemplos
+Remover elementos
+14 / 32
+--- page 15 ---
+Dicionários
+Exemplos
+Método items():
+15 / 32
+--- page 16 ---
+Dicionários
+Exemplos
+Método keys():
+16 / 32
+--- page 17 ---
+Dicionários
+Exemplos
+Método value():
+17 / 32
+--- page 18 ---
+Dicionários
+Exemplos
+Iteração:
+18 / 32
+--- page 19 ---
+Dicionários
+Exercícios
+1. Escreva uma função chamada procuraChave que encontre todas as
+chaves, em um dicionário, que estão associadas a um valor
+específico.
+A função receberá o dicionário e o valor a procurar como seus
+únicos parâmetros.
+A função retornará uma lista (possivelmente vazia) de chaves
+associadas ao valor fornecido.
+Faça um programa principal que mostra o funcionamento da
+função.
+Seu programa principal deve criar um dicionário e mostrar que
+a função procuraChave funciona corretamente quando retorna
+várias chaves, uma única chave ou nenhuma chave.
+19 / 32
+--- page 20 ---
+Dicionários
+Exercícios
+20 / 32
+--- page 21 ---
+Dicionários
+Exercícios
+2. Faça um programa que gere 100 números aleatórios
+Gere números no intervalo de 0 à 20
+Mostre quantas vezes cada número apareceu
+Dica:
+Utilize um dicionário para armazenar o número como chave
+e a quantidade de vezes em que ele aparece como valor
+21 / 32
+--- page 22 ---
+Dicionários
+Exercícios
+22 / 32
+--- page 23 ---
+Dicionários
+Exercícios
+3. Neste exercício, você simulará 1000 lançamentos de dois dados.
+Comece escrevendo uma função que simula o lançamento de um par
+de dados de seis lados cada.
+Sua função não deve aceitar nenhum parâmetro.
+Ela retornará a somatória obtida pelos dois dados.
+Escreva um programa principal que use sua função para simular
+1000 lançamentos de dois dados.
+Como acontece em alguns programas, você deve contar o número
+de vezes que cada somatória acontece.
+Em seguida, a função principal deve exibir uma tabela que
+resume esses resultados.
+Mostre a frequência para cada resultado como uma porcentagem
+do número total de lançamentos.
+23 / 32
+--- page 24 ---
+Dicionários
+Exercícios
+24 / 32
+--- page 25 ---
+Dicionários
+Exercícios
+4. Crie uma função que retorna o número de caracteres únicos em
+uma string criada pelo usuário.
+Por exemplo:
+“Hello, World!” tem 10 caracteres únicos
+enquanto zzz tem somente 1 caractere único.
+Use um dicionário para resolver este problema.
+25 / 32
+--- page 26 ---
+Dicionários
+Exercícios
+26 / 32
+--- page 27 ---
+Dicionários
+Exercícios
+5. Duas palavras são anagramas se contiverem todas as mesmas
+letras, mas em uma ordem diferente.
+Por exemplo: estante e setenta são anagramas.
+Crie uma função que recebe duas strings do usuário e determina
+se elas são ou não anagramas.
+Utilize dicionário para resolver o problema.
+27 / 32
+--- page 28 ---
+Dicionários
+Exercícios
+28 / 32
+--- page 29 ---
+Dicionários
+Exercícios
+6. Um cartão de bingo consiste de 5 colunas de 5 números. As
+colunas são rotuladas com as letras B, I, N, G e O. Existem 15
+números que podem aparecer na coluna de cada letra. Em
+particular, os números que podem aparecer na coluna de B estão
+no intervalo de 1 a 15, os números que podem aparecer sob o I
+variam de 16 a 30 e assim por diante. Escreva uma função que
+cria um cartão de Bingo com números aleatórios e armazena tudo
+em um dicionário. As chaves serão as letras B, I, N, G e O.
+Os valores serão as listas de cinco números que aparecem em
+cada letra.
+29 / 32
+--- page 30 ---
+Dicionários
+Exercícios
+30 / 32
+--- page 31 ---
+Dicionários
+Exercícios
+7. Escreva uma segunda função que exibe o cartão de Bingo com as
+colunas identificadas adequadamente.
+Use as funções para escrever um programa que exibe um cartão
+aleatório. letra.
+31 / 32
+--- page 32 ---
+Fundamentos de Algoritmos
+Aula 11
+Dicionários
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+32 / 32

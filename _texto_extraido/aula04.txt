@@ -1,0 +1,258 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 04
+Estruturas Condicionais e Operadores Lógicos
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 24
+--- page 2 ---
+Tópicos Preliminares
+Operadores lógicos
+Operador Função
+não negação
+e conjunção
+ou disjunção
+2 / 24
+--- page 3 ---
+Tópicos Preliminares
+Tabelas verdade - operação de negação
+A não A
+F V
+V F
+3 / 24
+--- page 4 ---
+Tópicos Preliminares
+Tabelas verdade - operação de conjunção
+A B A e B
+F F F
+F V F
+V F F
+V V V
+4 / 24
+--- page 5 ---
+Tópicos Preliminares
+Tabelas verdade - operação de disjunção
+A B A ou B
+F F F
+F V V
+V F V
+V V V
+5 / 24
+--- page 6 ---
+Tópicos Preliminares
+Operadores lógicos - exemplos
+1)
+2 < 5 e 15/3 = 5
+V e 5 = 5
+V e V
+V
+2)
+2 < 5 ou 15/3 = 5
+V ou 5 = 5
+V ou V
+V
+6 / 24
+--- page 7 ---
+Tópicos Preliminares
+Operadores lógicos - exemplos
+3) F ou 20 div(18/3) <> (21/3) div 2
+F ou 20 div 6 <> 7 div 2
+F ou 3 <> 3
+F ou F
+F
+4) não V ou pot(3, 2)/3 < 15 − 35 mod 7
+não V ou 9/3 < 15 − 0
+não V ou 3 < 15
+não V ou V
+F ou V
+V
+7 / 24
+--- page 8 ---
+Tópicos Preliminares
+Precedência entre operadores lógicos
+Prioridade Operadores
+1ª não
+2ª e
+3ª ou
+8 / 24
+--- page 9 ---
+Tópicos Preliminares
+Precedência entre todos os operadores
+Prioridade Operadores
+1ª parênteses mais internos
+2ª operadores aritméticos
+3ª operadores relacionais
+4ª operadores lógicos
+9 / 24
+--- page 10 ---
+Tópicos Preliminares
+Exemplo
+não ( 5 <> 10/2 ou V e 2 − 5 > 5 − 2 ou V )
+não ( 5 <> 5 ou V e −3 > 3 ou V )
+não ( F ou V e F ou V )
+não ( F ou F ou V )
+não ( F ou V )
+não ( V )
+F
+10 / 24
+--- page 11 ---
+Estrutura de Decisão
+Seleção encadeada
+Condição 1 Condição 2 Condição 3 Condição 4 Condição 5 Ação
+V V - - - Comando 1
+F - V - - Comando 2
+F - F V V Comando 3
+F - F F - Comando 4
+11 / 24
+--- page 12 ---
+Estrutura de Decisão
+Seleção encadeada - exemplo
+Dados três valores A, B e C, verificar se eles podem ser os
+comprimentos dos lados de um triângulo, se forem, verificar se
+compõem um triângulo equilátero, isósceles ou escaleno. Informar
+se não compuserem nenhum triângulo.
+Dados de entrada: três lados de um suposto triângulo (A, B, C).
+Dados de saída: mensagens: não compõem triângulo, triângulo
+equilátero, triângulo isósceles, triângulo escaleno.
+12 / 24
+--- page 13 ---
+Estrutura de Decisão
+Seleção encadeada - exemplo
+• O que é um triângulo?
+figura geométrica fechada de três lados, em que cada um é
+menor que a soma dos outros dois;
+• O que é um triângulo equilátero?
+um triângulo com três lados iguais;
+• O que é um triângulo isósceles?
+um triângulo com dois lados iguais;
+• O que é um triângulo escaleno?
+um triângulo com todos os lados diferentes.
+13 / 24
+--- page 14 ---
+Estrutura de Decisão
+Seleção encadeada - exemplo
+É triângulo? É equilátero? É isósceles? É escaleno? Ações
+V V F F "Equilátero"
+V F V - "Isósceles"
+V F F V "Escaleno"
+F - - - "Não é triângulo"
+14 / 24
+--- page 15 ---
+Estrutura de Decisão
+Seleção encadeada - exemplo
+Traduzindo as condições para expressões lógicas:
+• É triângulo: (A < B + C) e (B < A + C) e (C < A + B);
+• É equilátero: (A = B) e (B = C);
+• É isósceles: (A = B) ou (A = C) ou (B = C);
+• É escaleno: (A <> B ) e (B <> C ) e (A <> C ).
+15 / 24
+--- page 16 ---
+Estrutura de Decisão
+Seleção encadeada - exemplo
+1 a = i n t( i n p u t("Lado a: "))
+2 b = i n t( i n p u t("Lado b: "))
+3 c = i n t( i n p u t("Lado c: "))
+4 i f (a < b + c) a n d (b < a + c) a n d (c < a + b):
+5 i f (a == b) a n d ( b == c):
+6 p r i n t(" T r i n g u l o equil tero")
+7 e l s e:
+8 i f (a == b) o r (a == c) o r (b == c):
+9 p r i n t(" T r i n g u l o i s s c e l e s ")
+10 e l s e:
+11 p r i n t(" T r i n g u l o escaleno")
+12 e l s e:
+13 p r i n t(" N o T r i n g u l o ")
+16 / 24
+--- page 17 ---
+Estrutura de Decisão
+Seleção encadeada homogênea - se então se
+• Ao invés disso:
+• Use isso:
+17 / 24
+--- page 18 ---
+Estrutura de Decisão
+Seleção encadeada homogênea - se então se
+• Ao invés disso:
+1 se < c o n d i o 1>
+2 e n t o
+3 se < c o n d i o 2>
+4 e n t o
+5 se < c o n d i o 3>
+6 e n t o
+7 se < c o n d i o 4>
+8 e n t o W;
+9 fimse;
+10 fimse;
+11 fimse;
+12 fimse;
+• Use isso:
+1 se (< c o n d i o 1> e < c o n d i o 2> e < c o n d i o 3> e < c o n d i o 4>)
+2 e n t o W;
+3 fimse;
+18 / 24
+--- page 19 ---
+Estrutura de Decisão
+Exercícios
+1. Construa um algoritmo que, tendo como dados de entrada o preço
+de um produto e seu código de origem, mostre o preço junto de
+sua procedência. Caso o código não seja nenhum dos
+especificados, o produto deve ser encarado como importado.
+Siga a tabela de códigos:
+Código de origem Procedência
+1 Sul
+2 Norte
+3 Leste
+4 Oeste
+5 ou 6 Nordeste
+7, 8 ou 9 Sudeste
+10 até 20 Centro-Oeste
+25 até 30 Nordeste
+19 / 24
+--- page 20 ---
+Estrutura de Decisão
+Exercícios
+2. Escreva um algoritmo que leia três valores inteiros e
+diferentes e mostre-os em ordem decrescente.
+20 / 24
+--- page 21 ---
+Estrutura de Decisão
+Exercícios
+3. Tendo como dados de entrada a altura e o sexo de uma pessoa,
+construa um algoritmo que calcule seu peso ideal, utilizando
+as seguintes fórmulas:
+▶ para homens: (72,7 * h) - 58;
+▶ para mulheres: (62,1 * h) - 44,7.
+21 / 24
+--- page 22 ---
+Estrutura de Decisão
+Exercícios
+4. Faça um algoritmo que leia o ano de nascimento de uma pessoa,
+calcule e mostre sua idade e, também, verifique e mostre se
+ela já tem idade para votar (16 anos ou mais) e para conseguir
+a Carteira de Habilitação (18 anos ou mais).
+22 / 24
+--- page 23 ---
+Estrutura de Decisão
+Exercícios
+5. Escreva um algoritmo que leia o código de um determinado
+produto e mostre a sua classificação. Utilize a seguinte
+tabela como referência:
+Código Classificação
+1 Alimento não perecível
+2, 3 ou 4 Alimento perecível
+5 ou 6 Vestuário
+7 Higiene pessoal
+8 até 15 Limpeza e utensílios domésticos
+Qualquer outro código Inválido
+23 / 24
+--- page 24 ---
+Fundamentos de Algoritmos
+Aula 04
+Estruturas Condicionais e Operadores Lógicos
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+24 / 24

@@ -1,0 +1,288 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 09
+Listas
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 24
+--- page 2 ---
+Listas
+Técnicas de manipulação de listas
+Concatenação: Combinação de listas usando o operador +.
+▶ Concatenação simples:
+1 lista1 = [1, 2, 3]
+2 lista2 = [4, 5]
+3 nova_lista = lista1 + lista2
+4 p r i n t(nova_lista) # Saida: [1, 2, 3, 4, 5]
+2 / 24
+--- page 3 ---
+Listas
+Técnicas de manipulação de listas
+Concatenação: Combinação de listas usando o operador +.
+▶ Concatenação lista vazia:
+1 lista1 = ["Ola", "Mundo"]
+2 nova_lista = lista1 + [] # Adicionando uma lista vazia
+3 p r i n t(nova_lista) # Saida: ["Ola", "Mundo"]
+3 / 24
+--- page 4 ---
+Listas
+Técnicas de manipulação de listas
+Concatenação: Combinação de listas usando o operador +.
+▶ Concatenação mútiplas listas:
+1 lista1 = [1, 2]
+2 lista2 = [3, 4]
+3 lista3 = [5, 6, 7]
+4 nova_lista = lista1 + lista2 + lista3
+5 p r i n t(nova_lista) # Saida: [1, 2, 3, 4, 5, 6, 7]
+4 / 24
+--- page 5 ---
+Listas
+Técnicas de manipulação de listas
+Concatenação: Combinação de listas usando o operador +.
+▶ Extend:
+1 lista1 = [1, 2]
+2 lista2 = [3, 4]
+3 lista1.extend(lista2)
+4 p r i n t(lista1) # Saida: [1, 2, 3, 4]
+5 / 24
+--- page 6 ---
+Listas
+Técnicas de manipulação de listas
+Repetição: Criando sequências repetidas usando o operador *.
+▶ Repetindo uma lista um determinado número de vezes:
+1 lista1 = ["maca", "banana"]
+2 lista1_repetida = lista1 * 3
+3 p r i n t(lista1_repetida) # Saida: ["maca", "banana", "maca", "banana",
+"maca", "banana"]
+6 / 24
+--- page 7 ---
+Listas
+Técnicas de manipulação de listas
+Função map(): * conceito de aplicação de uma função a cada
+elemento de uma lista. *
+▶ Quadrado dos números da lista:
+1 d e f quadrado(num):
+2 r e t u r n num * num
+3
+4 numeros = [1, 2, 3, 4]
+5 quadrado_numeros = m a p(quadrado, numeros)
+6 p r i n t( l i s t(quadrado_numeros)) # Saida: [1, 4, 9, 16]
+7 / 24
+--- page 8 ---
+Listas
+Técnicas de manipulação de listas
+Função map(): * conceito de aplicação de uma função a cada
+elemento de uma lista. *
+▶ Usando funções Lambda:
+1 temperaturas = [20, 25, 32]
+2 celsius_para_fahrenheit = m a p( l a m b d a c: (c * 9/5) + 32, temperaturas)
+3
+4 p r i n t( l i s t(celsius_para_fahrenheit)) # Saida: [68.0, 77.0, 89.6]
+8 / 24
+--- page 9 ---
+Listas
+Técnicas de manipulação de listas
+Função filter(): * Conceito de filtragem de elementos com
+base em uma condição.
+▶ Filtrando números pares:
+1 d e f eh_par(num):
+2 r e t u r n num % 2 == 0
+3
+4 numeros = [1, 2, 3, 4, 5, 6]
+5 numeros_pares = f i l t e r(eh_par, numeros)
+6 p r i n t( l i s t(numeros_pares)) # Saida: [2, 4, 6]
+9 / 24
+--- page 10 ---
+Listas
+Técnicas de manipulação de listas
+Função filter(): * Conceito de filtragem de elementos com
+base em uma condição.
+▶ Filtrando palavras longas:
+1 palavras = ["maca", "banana", "abacaxi", "uva"]
+2 d e f is_long_word(word):
+3 r e t u r n l e n (word) > 6
+4
+5 palavras_longas = f i l t e r(is_long_word, palavras)
+6 p r i n t( l i s t(palavras_longas)) # Saida: ["abacaxi"]
+10 / 24
+--- page 11 ---
+Listas
+Técnicas de manipulação de listas
+Função filter(): * Conceito de filtragem de elementos com
+base em uma condição.
+▶ Usando funções Lambda:
+1 numeros = [-2, 5, 0, 8, -1]
+2 numeros_positivos = f i l t e r( l a m b d a x: x > 0, numeros)
+3
+4 p r i n t( l i s t(numeros_positivos)) # Saida: [5, 8]
+11 / 24
+--- page 12 ---
+Listas
+Técnicas de manipulação de listas
+Função filter(): * Conceito de filtragem de elementos com
+base em uma condição.
+▶ Combinando filter and map:
+1 numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+2
+3 d e f eh_par(num):
+4 r e t u r n num % 2 == 0
+5
+6 d e f quadrado(num):
+7 r e t u r n num * num
+8
+9 quadrados_pares = m a p(quadrado, f i l t e r(eh_par, numeros))
+10 p r i n t( l i s t(quadrados_pares)) # Saida: [4, 16, 36, 64]
+12 / 24
+--- page 13 ---
+Listas
+Técnicas de manipulação de listas
+Compreensão de lista (list comprehension):
+1 # Maneira tradicional com laco ’for’
+2 quadrados = []
+3 f o r x i n r a n g e (10):
+4 quadrados.append(x * x)
+5
+6 # Usando list comprehension
+7 quadrados_comprehension = [x * x f o r x i n r a n g e (10)]
+8
+9 p r i n t(quadrados)
+10 # Saida: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+11 p r i n t(quadrados_comprehension)
+12 # Saida: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+13
+14 # Forma concisa de criar listas: List comprehensions oferecem uma sintaxe
+mais limpa para criar listas baseadas em operacoes com listas
+existentes.
+13 / 24
+--- page 14 ---
+Listas
+Técnicas de manipulação de listas
+Compreensão de lista (list comprehension):
+1 # Exemplo filtrando numeros pares
+2 numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+3
+4 # Modo tradicional
+5 numeros_pares = []
+6 f o r numero i n numeros:
+7 i f numero % 2 == 0:
+8 numeros_pares.append(numero)
+9
+10 # Usando list comprehension
+11 numeros_pares_compr = [numero f o r numero i n numeros i f numero % 2 == 0]
+12
+13 p r i n t(numeros_pares) # Saida: [2, 4, 6, 8]
+14 p r i n t(numeros_pares_compr) # Saida: [2, 4, 6, 8]
+14 / 24
+--- page 15 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+1. Faça um programa que leia uma quantidade indeterminada de
+números positivos e conte quantos deles estão nos seguintes
+intervalos: [0-25], [26-50], [51-75] e [76-100]. A entrada
+de dados deverá terminar quando for lido um número negativo.
+15 / 24
+--- page 16 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+2. Uma empresa de pesquisas precisa tabular os resultados da
+seguinte enquete feita a um grande quantidade de organizações:
+"Qual o melhor Sistema Operacional para uso em servidores?"
+As possíveis respostas são:
+1- Windows Server
+2- Unix
+3- Linux
+4- Netware
+5- Mac OS
+6- Outro
+16 / 24
+--- page 17 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+2. Você foi contratado para desenvolver um programa que leia o
+resultado da enquete e informe ao final o resultado da mesma.
+O programa deverá ler os valores até ser informado o valor 0,
+que encerra a entrada dos dados. Não deverão ser aceitos
+valores além dos válidos para o programa (0 a 6). Os valores
+referentes a cada uma das opções devem ser armazenados num
+vetor. Após os dados terem sido completamente informados, o
+programa deverá calcular a percentual de cada um dos
+concorrentes e informar o vencedor da enquete. O formato da
+saída foi dado pela empresa, e é o seguinte:
+17 / 24
+--- page 18 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+O Sistema Operacional mais votado foi o Unix, com 3500 votos,
+correspondendo a 40% dos votos.
+18 / 24
+--- page 19 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+3. Usando funções Lambda:
+Pegue duas listas, digamos, por exemplo, estas duas:
+1 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+2 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+e escreva um programa que retorne uma lista que contenha
+apenas os elementos comuns entre as listas. Certifique-se de
+que seu programa funcione em duas listas de tamanhos
+diferentes. Escreva isso em uma linha de Python usando pelo
+menos uma compreensão de lista.
+19 / 24
+--- page 20 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+4. Faça um jogo em que o jogador deva adivinhar a palavra
+“EVAPARAR”. Para este exercício, escreva a lógica que pede ao
+jogador para adivinhar uma letra e exibe as letras da
+palavra-chave que foram adivinhadas corretamente. Por
+enquanto, deixe o jogador adivinhar um número infinito de
+vezes até obter a palavra inteira. Como bônus, acompanhe as
+letras que o jogador adivinhou e exiba uma mensagem diferente
+se o jogador tentar adivinhar a letra novamente. Lembre-se de
+parar o jogo quando todas as letras forem adivinhadas
+corretamente!
+20 / 24
+--- page 21 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+4. Um exemplo de interação pode ser assim:
+1 _ _ _ _ _ _ _ _ _
+2 >>> Adivinhe sua letra: S
+3 Incorreta!
+4 >>> Adivinhe sua letra: E
+5 E _ _ _ _ _ _ _ E
+6 ...
+E assim por diante, até que o jogador receba a palavra.
+21 / 24
+--- page 22 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+5. Problema: Contagem de Elementos Únicos
+Você deve escrever uma função em Python chamada
+count_unique_elements que recebe uma lista de inteiros e
+retorna o número de elementos únicos nessa lista.
+Detalhes:
+A função deve lidar com listas de qualquer tamanho, incluindo
+listas vazias. Elementos únicos são aqueles que aparecem
+exatamente uma vez na lista. Exemplo:
+1 Entrada: [1, 2, 2, 3, 4, 4, 5]
+2
+3 Saida: 3 (Os elementos unicos sao 1, 3 e 5.)
+22 / 24
+--- page 23 ---
+Listas
+Técnicas de manipulação de listas - Exercícios
+6. Escreva uma função Python para encontrar o segundo maior
+elemento em uma lista.
+23 / 24
+--- page 24 ---
+Fundamentos de Algoritmos
+Aula 09
+Listas
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+24 / 24

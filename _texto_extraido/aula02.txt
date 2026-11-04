@@ -1,0 +1,93 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 02
+Algoritmos com Lógica Sequencial
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 11
+--- page 2 ---
+Formas de escrever um Algoritmo
+Pseudocódigo (Português Estruturado)
+Exemplo:
+algoritmo CalcIdade
+exiba "Informe o ano atual: "
+receba anoAtual
+exiba "Informe o seu ano de nascimento: "
+receba anoNasc
+idade = anoAtual - anoNasc
+exiba "Sua idade é: ", idade
+fim-algoritmo
+2 / 11
+--- page 3 ---
+Formas de escrever um Algoritmo
+Diagrama de Blocos (Fluxograma)
+Exemplo:
+3 / 11
+--- page 4 ---
+Formas de escrever um Algoritmo
+Linguagem de Programação
+Exemplo:
+anoAtual = int(input("Informe o ano atual: "))
+anoNasc = int(input("Informe o seu ano de nascimento: "))
+idade = anoAtual - anoNasc
+print("Sua idade é:", idade)
+4 / 11
+--- page 5 ---
+Teste de Mesa
+Validação
+Como eu sei que o meu algoritmo funciona?
+O teste de mesa é a arte de simular a execução de um algoritmo
+escrito em pseudocódigo ou diagrama de blocos
+5 / 11
+--- page 6 ---
+VSCode
+Ferramenta de desenvolvimento de software
+Primeiros passos usando o VSCode
+6 / 11
+--- page 7 ---
+Prática
+Exercício 01
+Faça um programa que leia a altura de uma pessoa e calcule o
+peso ideal, suponha que o peso ideal seja dado pela fórmula:
+(72.7 × altura) − 58
+Saída esperada:
+7 / 11
+--- page 8 ---
+Prática
+Exercício 02
+Escreva um programa que pergunte a quantidade de km
+percorridos por um carro alugado assim como a quantidade de
+dias pelos quais o carro foi alugado. Calcule o preço a
+pagar, sabendo que:
+▶ o carro custa R$ 60,00 por dia
+▶ e R$ 0,15 por km rodado.
+Saída esperada:
+8 / 11
+--- page 9 ---
+Prática
+Exercício 03
+Faça um programa que solicita do usuário uma quantidade de
+dias, horas, minutos e segundos. Calcule e imprima o total
+convertido em somente segundos.
+Saída esperada:
+9 / 11
+--- page 10 ---
+Prática
+Exercício 04
+Faça um programa que pergunte quanto a pessoa ganha por hora e
+o número de horas trabalhas no mês. Calcule e mostre o total
+do salário no referido mês, sabendo-se que são descontados 11%
+para o imposto de renda, 8% para o INSS e 5% para o sindicato.
+Saída esperada:
+10 / 11
+--- page 11 ---
+Fundamentos de Algoritmos
+Aula 02
+Algoritmos com Lógica Sequencial
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+11 / 11

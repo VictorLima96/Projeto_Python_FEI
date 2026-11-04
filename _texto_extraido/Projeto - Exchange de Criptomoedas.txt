@@ -1,0 +1,325 @@
+--- page 1 ---
+CCP110
+Fundamentos 
+de Algoritmos
+Profa. Gabriela Biondi
+Prof. Murillo Bouzon
+Prof. Diogo Ramos
+
+--- page 2 ---
+Projeto
+Exchange de Criptomoedas
+--- page 3 ---
+Projeto
+•O projeto consiste na criação da sua 
+propria Exchange de Criptomoedas.
+• Exchanges de Criptomoedas são 
+plataformas onde é possível comprar e 
+vender criptomoedas
+• Uma criptomoeda é um tipo de 
+dinheiro – como outras moedas com as 
+quais convivemos cotidianamente – 
+com a diferença de ser totalmente 
+digital. Além disso, ela não emitida por 
+nenhum governo (como é o caso do 
+real ou do dólar, por exemplo)
+--- page 4 ---
+○ A sua Exchange deve trabalhar com 3 tipos de criptomoedas: 
+ Bitcoin:
+○ Cobra uma taxa de 2% na compra de bitcoin
+○ Cobra uma taxa de 3% na venda de bitcoin
+ Ethereum:
+○ Cobra uma taxa de 1% na compra de ethereum
+○ Cobra uma taxa de 2% na venda de ethereum
+ Ripple:
+○ Cobra uma taxa de 1% na compra de ripple
+○ Cobra uma taxa de 1% na venda de ripple
+Projeto - Especificações
+--- page 5 ---
+ V ocê deverá criar uma aplicação em Python com funcionalidades 
+para o usuário investidor conseguir as seguintes operações via 
+console:
+ Efetuar login
+ Consultar saldo (reais, bitcoin, ethereum e ripple) da carteira de 
+investimentos
+ Consultar extrato de operações da carteira de investimentos
+ Depositar reais na carteira de investimento
+ Sacar reais da carteira de investimento
+ Comprar criptomoedas (bitcoin, ethereum ou ripple)
+ Vender criptomoedas (bitcoin, ethereum e ripple)
+ Atualizar cotação das criptomoedas (bitcoin, ethereum e ripple)
+Projeto - Especificações
+--- page 6 ---
+● Efetuar login
+● Usuário deve informar:
+○ CPF sem pontos e sem traços
+○ Senha numérica com 6 dígitos
+● Se os dados estiverem corretos, fornecer acesso ao 
+menu completo:
+Projeto - Especificações
+1. Consultar saldo 
+2. Consultar extrato 
+3. Depositar
+4. Sacar 
+5. Comprar criptomoedas 
+6. Vender criptomoedas
+7. Atualizar cotação
+8. Sair
+--- page 7 ---
+● Consultar saldo (reais, bitcoin, ethereum e ripple) da carteira 
+de investimentos
+● Usuário deve informar:
+○ Senha numérica com 6 dígitos
+● Se a senha estiver correta, mostrar as informações 
+atualizadas:
+Projeto - Especificações
+Nome: Gabriela Biondi
+CPF: 123.456.789-00
+Reais: 580,00
+Bitcoin: 0,0158
+Ethereum: 1,03
+Ripple: 200,35
+--- page 8 ---
+● Consultar extrato de operações da carteira de investimentos
+● Usuário deve informar:
+○ Senha numérica com 6 dígitos
+● Se a senha estiver correta, mostrar as informações 
+atualizadas:
+Projeto - Especificações
+Nome: Gabriela Biondi
+CPF: 123.456.789-00
+01-01-2024 12:50 + 500.00 REAL CT: 0.0      TX: 0.00 REAL: 500.00 BTC: 0.0 ETH: 0.0   XRP: 0.0 
+01-01-2024 13:00 + 100.00 XRP  CT: 2.57     TX: 0.01 REAL: 399.00 BTC: 0.0 ETH: 0.0   XRP: 38.9 
+02-01-2024 14:50 - 100.00 REAL CT: 0.0      TX: 0.00 REAL: 299.00 BTC: 0.0 ETH: 0.0   XRP: 38.9 
+02-01-2024 18:00 + 100.00 ETH  CT: 16108.0  TX: 0.01 REAL: 198.00 BTC: 0.0 ETH: 0.006 XRP: 38.9 
+--- page 9 ---
+● Depositar reais na carteira de investimento
+● Usuário deve informar:
+○ O valor do depósito
+● Mostrar os saldos atualizados após o depósito
+Projeto - Especificações
+--- page 10 ---
+● Sacar reais na carteira de investimento
+● Usuário deve informar:
+○ O valor do saque (o saldo não pode ficar negativo)
+● Mostrar os saldos atualizados após o saque
+Projeto - Especificações
+--- page 11 ---
+● Comprar criptomoedas (bitcoin, ethereum ou ripple)
+● Usuário deve informar:
+○ Senha numérica com 6 dígitos
+● Se a senha estiver correta, mostrar as cotações das 
+criptomoedas e permitir que ele escolha quanto e qual 
+deseja comprar (o saldo não pode ficar negativo)
+● Aplicar a taxa de compra 
+Projeto - Especificações
+--- page 12 ---
+● Vender criptomoedas (bitcoin, ethereum ou ripple)
+● Usuário deve informar:
+○ Senha numérica com 6 dígitos
+● Se a senha estiver correta, mostrar as cotações das 
+criptomoedas e permitir que ele escolha quanto e qual 
+deseja vender (o saldo não pode ficar negativo)
+● Aplicar a taxa de venda
+Projeto - Especificações
+--- page 13 ---
+● Atualizar a cotação das criptomoedas (bitcoin, ethereum ou 
+ripple)
+● Usar a geração de números aleatórios para variar a 
+cotação de todas as criptomoedas
+● Observação: as variações precisam ser de no máximo 
++5% do valor anterior e no mínimo -5% do valor 
+anterior
+Projeto - Especificações
+--- page 14 ---
+● O projeto é individual! 
+Projeto - Especificações
+
+--- page 15 ---
+● Prof., deixa a gente fazer em dupla?
+Projeto - Especificações
+
+--- page 16 ---
+● Claro, mas com uma condição...
+Projeto - Especificações
+
+--- page 17 ---
+ Os projetos feitos em dupla também deverão criar funcionalidades 
+para o usuário administrador conseguir as seguintes operações via 
+console:
+ Efetuar login
+ Cadastrar novos investidores
+ Excluir investidores
+ Cadastrar novas criptomoedas
+ Excluir criptomoedas
+ Consultar saldo de um investidor
+ Consultar extrato de um investidor
+ Atualizar cotação das criptomoedas
+Projeto - Especificações
+--- page 18 ---
+● Efetuar login
+● Usuário deve informar:
+○ CPF sem pontos e sem traços
+○ Senha numérica com 6 dígitos
+● Se os dados estiverem corretos, fornecer acesso ao 
+menu completo
+Projeto - Especificações
+1. Cadastrar novo investidor
+2. Excluir investidor
+3. Cadastrar nova criptomoeda
+4. Excluir criptomoeda
+5. Consultar saldo de um investidor
+6. Consultar extrato de um investidor
+7. Atualizar cotação das criptomoedas
+8. Sair
+--- page 19 ---
+● Cadastrar novo investidor
+● Usuário deve informar:
+○ Nome, CPF e senha
+● Observação: o CPF não pode conter pontos e traços
+Projeto - Especificações
+--- page 20 ---
+● Excluir investidor
+● Usuário deve informar:
+○ CPF do investidor a ser excluído
+● Se o CPF existir, mostre os dados e pergunte se 
+realmente deseja excluir antes de fazer a exclusão 
+definitiva
+Projeto - Especificações
+--- page 21 ---
+● Cadastrar nova criptomoeda
+● Usuário deve informar:
+○ Nome, cotação, taxa de compra e taxa de venda
+Projeto - Especificações
+--- page 22 ---
+● Excluir criptomoeda
+● Usuário deve informar:
+○ Nome da criptomoeda que deseja excluir
+● Se o nome existir, mostre os dados e pergunte se 
+realmente deseja excluir antes de fazer a exclusão 
+definitiva
+Projeto - Especificações
+--- page 23 ---
+● Consultar saldo (reais, bitcoin, ethereum e ripple) de um 
+investidor
+● Usuário deve informar:
+○ CPF do investidor
+● Se o CPF existir, mostrar as informações atualizadas:
+Projeto - Especificações
+Nome: Gabriela Biondi
+CPF: 123.456.789-00
+Reais: 580,00
+Bitcoin: 0,0158
+Ethereum: 1,03
+Ripple: 200,35
+--- page 24 ---
+● Consultar extrato de operações de um investidor
+● Usuário deve informar:
+○ CPF do investidor
+● Se o CPF existir, mostrar as informações atualizadas:
+Projeto - Especificações
+Nome: Gabriela Biondi
+CPF: 123.456.789-00
+01-01-2024 12:50 + 500.00 REAL CT: 0.0      TX: 0.00 REAL: 500.00 BTC: 0.0 ETH: 0.0   XRP: 0.0 
+01-01-2024 13:00 + 100.00 XRP  CT: 2.57     TX: 0.01 REAL: 399.00 BTC: 0.0 ETH: 0.0   XRP: 38.9 
+02-01-2024 14:50 - 100.00 REAL CT: 0.0      TX: 0.00 REAL: 299.00 BTC: 0.0 ETH: 0.0   XRP: 38.9 
+02-01-2024 18:00 + 100.00 ETH  CT: 16108.0  TX: 0.01 REAL: 198.00 BTC: 0.0 ETH: 0.006 XRP: 38.9 
+--- page 25 ---
+● Atualizar a cotação das criptomoedas (bitcoin, ethereum ou 
+ripple)
+● Usar a geração de números aleatórios para variar a 
+cotação de todas as criptomoedas
+● Observação: as variações precisam ser de no máximo 
++5% do valor anterior e no mínimo -5% do valor 
+anterior
+Projeto - Especificações
+--- page 26 ---
+● IMPORTANTE: Não se esqueça de que a exchange não pode 
+perder as informações se o programa terminar, fechar, parar de 
+funcionar, ou o computador desligar!
+● Todos os dados devem ser salvos de maneira permanente
+● Para isso, utilize arquivos .txt
+Projeto - Especificações
+--- page 27 ---
+ O projeto é individual ou em dupla! Fique atento nas especificações de 
+acordo com a quantidade de integrantes na equipe!
+ O que deve entregar:
+ Todos os códigos fontes do projeto
+ Um relatório de no mínimo 3 e no máximo 5 páginas contendo a 
+documentação do projeto
+ Um link de um vídeo demostrando o funcionamento completo do seu 
+projeto (o vídeo deve estar publicado no YouTube como “público” e você 
+deve entregar apenas o link de acesso)
+Projeto - Especificações
+--- page 28 ---
+Projeto - Especificações
+○ Não copie códigos!
+○ Qualquer plágio identificado receberá nota zero!
+--- page 29 ---
+ Funcionamento do projeto
+ Atendimento as especificações e requisitos do projeto
+ Aplicação dos conceitos aprendido em aula
+ Aplicação de novos conceitos e/ou adaptações
+ Explicação do vídeo e documentação
+Critério de avaliação do projeto
+--- page 30 ---
+Vídeo demostrando o funcionamento completo do projeto. 
+o Vídeo de no mínimo 3 minutos e no máximo 8 minutos
+o Caso seja realizado em dupla, os dois deverão apresentar (cada uma 
+explica parte do projeto)
+o O vídeo pode ser hospedado no Youtube, Google drive, etc. (deixe 
+público e entregue o link)
+o Apresentar no vídeo todas as funcionalidades e não se esqueça de 
+mostrar os arquivos .txt sendo atualizado durante as operações
+Video
+--- page 31 ---
+Parte 1 – Individual
+• Login funcionando para o usuário investidor
+• Apresentação do Menu pós login do investidor
+• Funções criadas (mas sem implementação da lógica) para cada opção 
+do menu do investidor
+• Sair funcionando
+Parte 1 – Dupla
+• Todo que seria entregue individualmente +
+• Login funcionando para o usuário administrador
+• Apresentação do Menu pós login do administrador
+• Funções criadas (mas sem implementação da lógica) para cada opção 
+do menu do administrador
+• Sair funcionando
+Entregas Parciais #01
+--- page 32 ---
+Parte 2 – Individual
+• Consultar saldos do investidor
+• Depositar reais na carteira do investidor
+• Sacar reais da carteira do investidor
+Parte 2 – Dupla
+• Todo que seria entregue individualmente +
+• Cadastrar novos investidores
+• Consultar saldo de um investidor
+Entregas Parciais #02
+--- page 33 ---
+Parte 3 – Individual
+• Consultar extrato do investidor
+• Comprar criptomoeda
+• Vender criptomoeda
+Parte 3 – Dupla
+• Todo que seria entregue individualmente +
+• Cadastrar novas criptomoedas
+• Consultar extrato de um investidor
+Entregas Parciais #03
+--- page 34 ---
+Parte 4 – Individual
+• Atualizar cotação de criptomoedas
+• Gravar dados em arquivos .txt
+Parte 4 – Dupla
+• Todo que seria entregue individualmente +
+• Atualizar cotação de uma criptomoeda
+Entregas Parciais #04
+--- page 35 ---
+• Todos os códigos funcionando
+• Documentação
+• Vídeo
+Entregas Final
+--- page 36 ---
+Cuidado com as datas!
+(cronograma no Moodle)

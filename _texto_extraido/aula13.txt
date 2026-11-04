@@ -1,0 +1,399 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 13
+Manipulação de Strings, Módulos/Pacotes e GUI
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 32
+--- page 2 ---
+Strings
+Definição
+Strings são sequências de caracteres;
+A representação de um caractere é dada por um número inteiro,
+hexadecimal ou binário;
+Esse número segue um padrão conhecido entre diversos sistemas
+computacionais:
+▶ ASCII - American Stardard Code Information Interchange
+⋆ 7 bits (números de 0 a 127)
+⋆ ASCII Estendida: 8 bits (números de 0 a 255)
+▶ UTF - Unicode Transformation Format
+⋆ De 1 a 4 bytes por caractere (sempre octetos)
+2 / 32
+--- page 3 ---
+Strings
+ASCII
+Para imprimir os caracteres da tabela ASCII:
+1 f o r i i n r a n g e (0, 255):
+2 p r i n t("%c" % i, end=" ")
+Para imprimir os caracteres da tabela UTF (Unicode):
+1 p r i n t(u’\u00ae’)
+2 p r i n t(u’\u0061’)
+3 p r i n t(u’\u00c7’)
+3 / 32
+--- page 4 ---
+Strings
+ASCII
+Imprimir o valor ASCII/Unicode de um caractere - função ord():
+1 p r i n t( o r d("a")) # 97
+2 p r i n t( o r d("A")) # 65
+3 p r i n t( o r d(" ")) # 225
+Imprimir o caractere a partir de um valor ASCII/Unicode -
+função chr():
+1 p r i n t( c h r(97)) # a
+2 p r i n t( c h r(65)) # A
+3 p r i n t( c h r(225)) #
+4 / 32
+--- page 5 ---
+Strings
+Exercício 01
+Faça um programa que peça uma string para o usuário;
+Imprima uma nova string substituindo as vogais minúsculas por
+vogais. maiúsculas.
+5 / 32
+--- page 6 ---
+Strings
+Exercício 02
+Peça ao usuário uma string 1;
+Imprima se essa string é um palíndromo ou não.
+Palíndromo é uma palavra ou frase (normalmente, ignorando-se
+os espaços em branco) que se pode ler, indiferentemente, da
+esquerda para a direita ou vice-versa.
+Exemplos: “ovo”, “a grama é amarga” maiúsculas.
+1As string são tuplas de caracteres, podendo ser manipuladas como tal.
+6 / 32
+--- page 7 ---
+Strings
+Métodos
+Existem muitos métodos próprios para serem utilizados com
+strings
+Alguns exemplos:
+▶ capitalize()
+▶ count()
+▶ find()
+▶ lower()
+▶ islower()
+▶ isdigit()
+▶ isalpha()
+▶ split()
+▶ strip()
+▶ replace()
+7 / 32
+--- page 8 ---
+Strings
+Exercício 03
+Neste exercício, você criará um programa em Python que
+identifica a(s) palavras(s) mais longa(s) em um arquivo.
+Seu programa deve exibir uma mensagem que inclua o tamanho da
+palavra mais longa, juntamente com todas as palavras desse
+comprimento que ocorreram no arquivo. Desconsidere sinais de
+pontuação.
+8 / 32
+--- page 9 ---
+Strings
+Exercício 04
+Escreva um programa que exiba a(s) palavra(s) que ocorrera(m)
+com mais frequência em um arquivo e quantas vezes a(s)
+palavra(s) aparece(m).
+Seu programa deve começar lendo o nome do arquivo do usuário.
+Em seguida, ele deve encontrar a(s) palavra(s) mais
+frequente(s), ignorando letras maiúsculas ou minúsculas e a
+pontuação.
+Desta forma, por exemplo, as palavras apple, apple!, Apple,
+APPLE e ApPlE devem todas ser contadas como uma única palavra.
+9 / 32
+--- page 10 ---
+Strings
+Exercício 05
+Pig Latin é uma língua construída pela transformação de
+palavras da língua inglesa.
+Regras usadas para traduzir do inglês para o Pig Latin:
+1) Se a palavra começar com consoante (incluindo y), todas as
+letras no início da palavra, até a primeira vogal (excluindo y),
+serão removidas e adicionadas ao final da palavra, seguidas de
+ay.
+Por exemplo:
+computer se torna omputercay e think se torna inkthay.
+2) Se a palavra começar com uma vogal (não incluindo y), então way
+é adicionado ao final da palavra.
+Por exemplo:
+o algorithm se torna algorithmway e office se torna officeway.
+Escreva um programa que leia uma linha de texto do usuário.
+Seu programa deve traduzir a linha para Pig Latin e exibir o
+resultado.
+Trate letras maiúsculas, minúsculas e pontuação. 10 / 32
+--- page 11 ---
+Módulos
+Para o Python, Módulos são arquivos fonte que podem ser
+importados para um programa.
+Podem conter qualquer estrutura do Python e são executados
+quando importados.
+Um módulo é um arquivo .py que pode conter: Funções,
+Variáveis (Constantes) e Classes
+11 / 32
+--- page 12 ---
+Módulos
+Importação absoluta:
+1 i m p o r t math
+2
+3 p r i n t(math.sqrt(9))
+Importação relativa:
+1 f r o m math i m p o r t sqrt
+2
+3 p r i n t(sqrt(9))
+12 / 32
+--- page 13 ---
+Módulos
+Exemplo
+13 / 32
+--- page 14 ---
+Módulos
+Módulos são arquivos .py
+Como garantimos que um programa principal não será importado
+em outro arquivo .py?
+Utilizamos a variável especial __name__
+__name__ indica o nome do contexto em que o módulo está sendo
+executado
+14 / 32
+--- page 15 ---
+Módulos
+Quando um módulo é diretamente executado, __name__ é definido
+como “__main__”
+Quando o módulo é importado, __name__ fica igual ao nome do
+módulo, ou seja, do arquivo.
+Logo, podemos incluir uma condição para rodar nosso main:
+1 f r o m calculo i m p o r t media
+2
+3 d e f main():
+4 l = [10, 15, 87, 14, 98, 41, 30, 36]
+5 p r i n t(media(l))
+6
+7 i f __name__ == "__main__":
+8 main()
+15 / 32
+--- page 16 ---
+Pacotes
+De uma forma simples, um pacote é uma coleção de módulos.
+Quando os módulos aumentam de tamanho, podemos dividí-los em
+pacotes
+Módulos são estruturados em arquivos, enquanto que, pacotes
+são estruturados em pastas.
+Todos os pacotes devem conter um arquivo __init__.py
+Os arquivos __init__.py servem para que o interpretador possa
+identificar quais diretórios são pacotes e quais não são.
+16 / 32
+--- page 17 ---
+GUI
+Graphical User Interface
+Interface Gráfica do Usuário
+Por que utilizar Interface Gráfica do Usuário?
+Foco no usuário final:
+▶ Mais amigável
+▶ Interação mais rápida
+▶ Mais produtiva
+17 / 32
+--- page 18 ---
+GUI
+Frameworks para Python
+Tkinter (Tk interface)
+▶ Toolkit padrão do Python para desenvolvimento de GUI
+PyQt
+wxPython
+etc
+18 / 32
+--- page 19 ---
+GUI
+Frameworks para Python
+Vamos usar o Tkinter:
+▶ O Tkinter é um pacote interessante que já vem por padrão com o
+Python.
+▶ Para usar o Tkinter, só precisamos importá-lo:
+1 f r o m tkinter i m p o r t *
+▶ O Tkinter permite a criação de janelas, rótulos, botões, caixas
+de texto, caixas de mensagem etc.
+19 / 32
+--- page 20 ---
+GUI
+Criando uma Janela
+1 f r o m tkinter i m p o r t *
+2
+3 #cria a janela
+4 janela = Tk()
+5
+6 # titulo para a janela
+7 janela.title("Algoritmos")
+8
+9 #configura o tamanho da janela
+10 janela.geometry(’400x400’)
+11
+12 #chama a funcao mainloop:
+13 #loop infinito para manter a janela aberta
+14 janela.mainloop()
+20 / 32
+--- page 21 ---
+GUI
+Criando uma Label
+1 f r o m tkinter i m p o r t *
+2
+3 janela = Tk()
+4 janela.title("Algoritmos")
+5 janela.geometry(’400x400’)
+6
+7 #cria um rotulo na janela, adiciona um texto e configura fonte
+8 rotulo = Label(janela.text="Hello GUI!", font=("Arial Bold", 14))
+9
+10 #configura onde a label vai aparecer na janela
+11 rotulo.place(x=200, y=100, anchor=center)
+12
+13 janela.mainloop()
+21 / 32
+--- page 22 ---
+GUI
+Posicionamento dos Elementos
+O place permite que os elementos sejam explicitamente
+posicionados de forma absoluta ou relativa
+Sintaxe:
+▶ Posicionando o elemento w de forma relativa:
+1 w.place(relx=0.5, rely=0.5, anchor=CENTER)
+▶ Posicionando o elemento w de forma absoluta:
+1 w.place(x=50, y=100, anchor=CENTER)
+22 / 32
+--- page 23 ---
+GUI
+Posicionamento dos Elementos
+O anchor refere-se ao elemento que está sendo posicionado
+Pode assumir os valores (referências cardeais):
+▶ NW (default), N, NE, E, SE, S, SW, W, CENTER
+1 f r o m tkinter i m p o r t *
+2 window = TK()
+3
+4 window.title("Nova tela")
+5
+6 window.geometry(’350x200’)
+7
+8 btn1 = Button(window, text = " B o t o 1")
+9 btn1.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+10
+11 btn2 = Button(window, text = " B o t o 2")
+12 btn2.place(x = 100, y = 50, anchor = CENTER)
+13
+14 window.mainloop()
+23 / 32
+--- page 24 ---
+GUI
+Criando botões
+1 f r o m tkinter i m p o r t *
+2
+3 janela = Tk()
+4 janela.title("Algoritmos")
+5 janela.geometry(’400x400’)
+6
+7 rotulo = Label(janela.text="Hello GUI!", font=("Arial Bold", 14))
+8 rotulo.place(x=200, y=100, anchor=center)
+9
+10 #cria o botao na janela com o texto desejado
+11 botao = Button(janela, text = "Clique aqui!")
+12
+13 #configura onde o botao vao aparecer na janela
+14 botao.place(x=200, y=200, anchor=CENTER)
+15
+16 janela.mainloop()
+24 / 32
+--- page 25 ---
+GUI
+Adicionando funcionalidade ao botão
+O botão criado anteriormente não tem utilizade!
+Normalmente o clique de um botão é associado a chamada de uma
+função
+25 / 32
+--- page 26 ---
+GUI
+Adicionando funcionalidade ao botão
+1 #contonuando o exemplo anterior
+2
+3 rotulo = Label(janela.text="Hello GUI!", font=("Arial Bold", 14))
+4 rotulo.place(x=200, y=100, anchor=center)
+5
+6 #definicao na funcao clique()
+7 d e f clique():
+8 rotulo[’text’] = "Novo texto!"
+9
+10 #cria o botao na janela com o texto desejado
+11 botao = Button(janela, text = "Clique aqui!", command=clique)
+12
+13 #configura onde o botao vao aparecer na janela
+14 botao.place(x=200, y=200, anchor=CENTER)
+15
+16 janela.mainloop()
+26 / 32
+--- page 27 ---
+GUI
+Criando caixas de texto
+1 #contonuando o exemplo anterior
+2
+3 rotulo.place(x=200, y=100, anchor=center)
+4
+5 #cria o elemento de entrada de texto e configura seu tamanho e posicao
+6 entrada = Entry(janela, width=14, font=("Arial Bold", 14))
+7 entrada.place(x=200, y=50, anchor=CENTER)
+8
+9 #redefinicao na funcao clique()
+10 d e f clique():
+11 resposta = entrada.get()
+12 rotulo[’text’] = resposta
+13
+14 botao = Button(janela, text = "Clique aqui!", command=clique)
+15 botao.place(x=200, y=200, anchor=CENTER)
+16
+17 janela.mainloop()
+27 / 32
+--- page 28 ---
+GUI
+Caixas de Mensagem
+1 f r o m tkinter i m p o r t *
+2 f r o m tkinter i m p o r t messagebox
+3
+4 ...
+5
+6 d e f show()
+7 res = messagebox.showinfo(’Aviso’, ’O b o t o foi clicado!’)
+8 p r i n t(res)
+9
+10 botao2 = Button(janela, text = " B o t o ", command=show)
+28 / 32
+--- page 29 ---
+GUI
+Caixas de Mensagem
+Caixas de diálogo com perguntas:
+1 d e f show()
+2 res = messagebox.askyesno(’Sim ou Nao’, ’Python e legal?’)
+3 p r i n t(res)
+res terá o valor True ou False, dependendo do botão que for
+clicado
+29 / 32
+--- page 30 ---
+GUI
+Caixas de Mensagem
+Mais caixas de diálogo com perguntas:
+1 res = messagebox.askquestion(’Aviso’, ’Botao clicado!’)
+2 res = messagebox.askyesnocancel(’Aviso’, ’Botao clicado!’)
+3 res = messagebox.askokcancel(’Aviso’, ’Botao clicado!’)
+4 res = messagebox.askretrycancel(’Aviso’, ’Botao clicado!’)
+30 / 32
+--- page 31 ---
+GUI
+Exemplo
+Aplicação que recebe dois números e apresenta o resultado
+Dica: para atribuir um texto a uma caixa de texto, utilize:
+<nome da caixa>.insert(0, <valor>)
+31 / 32
+--- page 32 ---
+Fundamentos de Algoritmos
+Aula 13
+Manipulação de Strings, Módulos/Pacotes e GUI
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+32 / 32

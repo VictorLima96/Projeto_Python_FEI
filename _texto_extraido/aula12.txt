@@ -1,0 +1,140 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 12
+Arquivos
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 15
+--- page 2 ---
+Arquivos
+Definição
+Garante perenidade dos dados considerados por uma aplicação;
+São linhas de texto, normalmente salvos com a extensão .txt,
+.dat, .csv, ...
+2 / 15
+--- page 3 ---
+Arquivos
+Abertura
+Sintaxe:
+1 arquivo = o p e n("teste.txt", "w")
+Operações:
+3 / 15
+--- page 4 ---
+Arquivos
+Escrita
+Sintaxe:
+1 arquivo.write("texto a ser escrito no arquivo")
+Observações:
+▶ O método write funciona de maneira similar que o print com
+marcadores (%d, %f, %s), porém precisamos sempre incluir o “\n”
+quando queremos ir para a próxima linha.
+▶ Depois que escrevermos no arquivo, precisamos fechá-lo
+utilizando o método close:
+1 arquivo.close()
+4 / 15
+--- page 5 ---
+Arquivos
+Escrita - Exemplo
+1 arquivo = o p e n("teste.txt", "w")
+2
+3 f o r linha i n r a n g e (1, 101):
+4 arquivo.write("Linha %d\n" % linha)
+5 arquivo.close()
+5 / 15
+--- page 6 ---
+Arquivos
+Leitura
+Sintaxe:
+1 arquivo = o p e n("teste.txt", "r")
+6 / 15
+--- page 7 ---
+Arquivos
+Leitura - Exemplo
+1 arquivo = o p e n("teste.txt", "r")
+2
+3 f o r linha i n arquivo.readlines():
+4 p r i n t(linha)
+5 arquivo.close()
+7 / 15
+--- page 8 ---
+Arquivos
+Exemplo 01
+Gerar e gravar números pares e ímpares em arquivos separados:
+Números de 0 a 999.
+Números pares no arquivo pares.txt
+Números ímpares no arquivo impares.txt
+8 / 15
+--- page 9 ---
+Arquivos
+Exemplo 02
+Utilize o arquivo “pares.txt” gerado no último exemplo:
+Vamos criar outro arquivo que deve conter somente os números
+múltiplos de 4
+9 / 15
+--- page 10 ---
+Arquivos
+Exemplo 03
+Ler da entrada padrão o nome e o telefone de um usuário e
+gravar no arquivo: “contatos.txt”, em uma mesma linha;
+Parar quando nome for vazio;
+Abrir o arquivo gerado;
+Ler os registros e mostrar os dados na saída padrão.
+10 / 15
+--- page 11 ---
+Arquivos
+Exercício 01
+Crie um programa que inverta a ordem das linhas do arquivo
+pares.txt.
+A primeira linha deve conter o maior número e a última linha o
+menor.
+Salve o resultado em outro arquivo (invertido.txt).
+11 / 15
+--- page 12 ---
+Arquivos
+Exercício 02
+Crie um arquivo: “numeros.txt” que contenha 100 números
+aleatórios;
+Todos os números do arquivo estão na mesma e única linha,
+separados por espaço;
+Escreva uma função em Python para retornar a somatória de
+todos os números que estão armazenados no arquivo
+“numeros.txt”.
+12 / 15
+--- page 13 ---
+Arquivos
+Exercício 03
+Crie um arquivo: “numeros.txt” que contenha 100 números
+aleatórios;
+Escreva uma função que leia uma sequência numérica do arquivo
+“numeros.txt” e salva os números na lista num.
+Escreva outra função que recebe a lista num como parâmetro e
+retorna uma nova lista num_unicos, sem os elementos repetidos.
+Escreva uma terceira função que recebe a lista num_unicos e
+grava os números no arquivo “numeros_unicos.txt”.
+13 / 15
+--- page 14 ---
+Arquivos
+Exercício 04
+Crie uma agenda de telefones que salva os dados de maneira
+permanente.
+A agenda deve funcionar em loop infinito, até que o usuário
+decida sair. Os dados armazenados são: nome, sobrenome,
+telefone e e-mail.
+A agenda deve apresentar o seguinte menu para o usuário:
+▶ 1 - Novo contato (create)
+▶ 2 - Procura (pelo nome) (read)
+▶ 3 - Atualiza contato (update)
+▶ 4 - Apaga contato (delete)
+▶ 0 - Sair
+14 / 15
+--- page 15 ---
+Fundamentos de Algoritmos
+Aula 12
+Arquivos
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+15 / 15

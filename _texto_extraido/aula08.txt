@@ -1,0 +1,238 @@
+--- page 1 ---
+Fundamentos de Algoritmos
+Aula 08
+Listas e Tuplas
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+1 / 32
+--- page 2 ---
+Listas e Tuplas
+Lista
+Uma lista é uma variável que armazena um conjunto de valores
+2 / 32
+--- page 3 ---
+Listas e Tuplas
+Lista
+Lista é um tipo de variável que permite o armazenamento de
+valores:
+▶ com tipos homogêneos (do mesmo tipo)
+▶ ou heterogêneos (tipos diferentes)
+Os valores armazenados em uma lista são acessados por um
+índice
+3 / 32
+--- page 4 ---
+Listas e Tuplas
+Lista
+Para indicar que uma variável é uma lista:
+▶ Utilizamos o símbolo de colchetes [ ] para delimitar o conjunto
+▶ Sintaxe - criando uma lista chamada L:
+L é uma lista vazia
+4 / 32
+--- page 5 ---
+Listas e Tuplas
+Lista
+Criando uma lista chamada z com 3 números inteiros
+Dizemos que z tem tamanho 3
+▶ Podemos utilizar o Python Tutor para verificar melhor a lista:
+▶ https://pythontutor.com/python-debugger.html#mode=edit
+5 / 32
+--- page 6 ---
+Listas e Tuplas
+Acesso aos elementos
+Para acessarmos o primeiro número da lista z, utilizamos a
+notação z[0]
+Ou seja, da lista z queremos pegar o valor armazenado no
+índice 0.
+6 / 32
+--- page 7 ---
+Listas e Tuplas
+Adicionar elementos
+Podemos modificar o conteúdo armazenado utilizando o nome de
+uma lista com índice desejado
+Exemplo:
+▶ Alterando o valor do primeiro elemento (índice 0) da lista z
+7 / 32
+--- page 8 ---
+Listas e Tuplas
+Adicionando elementos no fim da lista
+Podemos ainda adicionar novos elementos no fim da lista
+▶ Para isto, utilizamos o método append(item)
+8 / 32
+--- page 9 ---
+Listas e Tuplas
+Adicionando elementos em qualquer lugar
+Podemos ainda adicionar elementos em qualquer lugar da lista
+Para isto, utilizamos o método insert(índice, item)
+9 / 32
+--- page 10 ---
+Listas e Tuplas
+Exercício 1
+Faça um programa que:
+▶ Leia 5 valores do usuário e armazene-os em uma lista
+▶ Imprima a lista completa
+▶ Imprima o primeiro e o último elemento da lista
+10 / 32
+--- page 11 ---
+Listas e Tuplas
+Removendo da lista pelo índice
+Podemos remover um elemento da lista
+Para isto, utilizamos o método pop(índice)
+11 / 32
+--- page 12 ---
+Listas e Tuplas
+Removendo da lista pelo elemento
+Podemos remover um elemento da lista
+Para isto, utilizamos o método remove(item)
+12 / 32
+--- page 13 ---
+Listas e Tuplas
+Removendo da lista pelo elemento
+Como temos os métodos para incluir e remover dados das listas,
+nem sempre sabemos qual é o tamanho exato que a lista tem
+Para descobrirmos o tamanho da lista, utilizamos o método
+len(lista)
+13 / 32
+--- page 14 ---
+Listas e Tuplas
+Pesquisando na lista
+Podemos pesquisar se um elemento está na lista
+Para isso, verificamos do primeiro ao último comparando com o
+que queremos encontrar.
+Para percorrer listas, utilizamos uma estrutura de repetição:
+while ou for
+A estrutura for é otimizada para trabalhar com listas
+14 / 32
+--- page 15 ---
+Listas e Tuplas
+Pesquisando na lista
+Procurar o elemento “c” na lista z
+15 / 32
+--- page 16 ---
+Listas e Tuplas
+Pesquisando na lista
+Porém, se a ideia é somente falar se o elemento está ou não na
+lista, podemos utilizar uma estrutura mais simples:
+16 / 32
+--- page 17 ---
+Listas e Tuplas
+Pesquisando na lista
+Contudo, nem sempre encontrar o elemento é suficiente
+Muitas vezes, precisamos saber qual é a sua posição(índice) na
+lista
+17 / 32
+--- page 18 ---
+Listas e Tuplas
+Exercício 2
+Faça um programa que:
+▶ Mostre o menor valor dentro da lista T = [11, 7, 2, 4]
+18 / 32
+--- page 19 ---
+Listas e Tuplas
+Exercício 3
+Faça um programa que:
+▶ Peça 10 números reais do usuário.
+▶ Armazene-os em uma lista e diga qual o índice do maior e seu
+valor
+19 / 32
+--- page 20 ---
+Listas e Tuplas
+Exercício 4
+Faça um programa para criar uma lista de 10 elementos do
+usuário e aprsente:
+▶ a soma dos elementos pares
+▶ a soma dos elementos de índice par
+20 / 32
+--- page 21 ---
+Listas e Tuplas
+Fatiamento (Slicing)
+No Python, podemos também fatiar as listas
+Ou seja, pegar somente partes de uma lista
+21 / 32
+--- page 22 ---
+Listas e Tuplas
+Cópia
+A cópia de uma lista para uma nova variável requer alguma
+atenção!
+Por exemplo, se quisermos copiar a lista z para uma nova
+variável chamada z1, o mais natural seria o seguinte:
+Porém, quando fazemos isso no Python, criamos duas variáveis
+que referenciam a mesma lista!
+É como se déssemos dois nomes para a mesma lista
+22 / 32
+--- page 23 ---
+Listas e Tuplas
+Cópia
+Quando alteramos o elemento da lista z, a alteração ocorre
+também na lista z1
+23 / 32
+--- page 24 ---
+Listas e Tuplas
+Cópia
+Para criarmos uma cópia independente, utilizamos a sintaxe:
+24 / 32
+--- page 25 ---
+Listas e Tuplas
+Tuplas
+Tuplas são similares às listas, porém são imutáveis!
+Tuplas não permitem adicionar, apagar, inserir ou modificar
+elementos
+Tuplas são definidas com parêntesis ( )
+Tuplas são definidas com colchetes [ ]
+25 / 32
+--- page 26 ---
+Listas e Tuplas
+Tuplas
+Exemplos:
+26 / 32
+--- page 27 ---
+Listas e Tuplas
+Tuplas
+Tuplas são imutáveis!
+Exemplos:
+27 / 32
+--- page 28 ---
+Listas e Tuplas
+Exercício 5
+Faça um programa que:
+▶ Imprime uma sequência de n números em ordem inversa à da leitura
+▶ Utilize uma lista para isso.
+Exemplo de execução
+28 / 32
+--- page 29 ---
+Listas e Tuplas
+Exercício 6
+Faça um programa para criar uma lista de 10 elementos inteiros
+▶ Mostre todos os elementos que forem maiores que a soma de dois
+de seus antecessores
+Exemplo de execução
+29 / 32
+--- page 30 ---
+Listas e Tuplas
+Exercício 7
+As temperaturas de uma cidade foram armazenadas na lista
+temperaturas = [-10, -8, 0, 1, 2, 5, -2, -4].
+Faça um programa que imprime a menor e a maior temperatura
+E imprima também a média das temperaturas
+Exemplo de execução
+30 / 32
+--- page 31 ---
+Listas e Tuplas
+Exercício 8
+Neste exercício, você criará um programa que lê palavras do
+usuário até que o usuário entre com uma linha em branco.
+Após o usuário digitar uma linha em branco, seu programa deve
+exibir cada palavra digitada pelo usuário exatamente uma vez.
+As palavras devem ser exibidas na mesma ordem em que foram
+inseridas.
+31 / 32
+--- page 32 ---
+Fundamentos de Algoritmos
+Aula 08
+Listas e Tuplas
+Profa. Dra. Gabriela Biondi
+Ciência da Computação
+Ciência de Dados e Inteligência Artificial
+Centro Universitário FEI
+32 / 32
