@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # =====================================================================
 # funcoes.py - as regras da exchange
 # Tudo que envolve arquivo, login, saldo, extrato e operações fica aqui.
@@ -7,6 +8,8 @@
 import os
 import random
 from datetime import datetime
+
+ENCODING = "utf-8"
 
 # ---------- CAMINHOS DOS ARQUIVOS ----------
 
@@ -39,7 +42,7 @@ def criar_arquivos_iniciais():
         os.makedirs(PASTA_DADOS)
 
     if not os.path.exists(ARQ_INVESTIDORES):
-        arquivo = open(ARQ_INVESTIDORES, "w", encoding="utf-8")
+        arquivo = open(ARQ_INVESTIDORES, "w", encoding=ENCODING)
         arquivo.write("12345678900;Victor Lima;123456;1000.00;0.00000000;0.00000000;0.00\n")
         arquivo.close()
 
@@ -47,7 +50,7 @@ def criar_arquivos_iniciais():
         salvar_moedas(moedas_iniciais())
 
     if not os.path.exists(ARQ_EXTRATO):
-        arquivo = open(ARQ_EXTRATO, "w", encoding="utf-8")
+        arquivo = open(ARQ_EXTRATO, "w", encoding=ENCODING)
         arquivo.close()
 
 
@@ -58,7 +61,7 @@ def carregar_investidores():
     if not os.path.exists(ARQ_INVESTIDORES):
         return investidores
 
-    arquivo = open(ARQ_INVESTIDORES, "r", encoding="utf-8")
+    arquivo = open(ARQ_INVESTIDORES, "r", encoding=ENCODING)
 
     for linha in arquivo:
         linha = linha.strip()
@@ -95,7 +98,7 @@ def carregar_investidores():
 
 def salvar_investidores(investidores):
     # sobrescreve o arquivo inteiro com o estado atual da memória
-    arquivo = open(ARQ_INVESTIDORES, "w", encoding="utf-8")
+    arquivo = open(ARQ_INVESTIDORES, "w", encoding=ENCODING)
 
     for cpf, dados in investidores.items():
         c = dados["carteira"]
@@ -113,7 +116,7 @@ def carregar_moedas():
     if not os.path.exists(ARQ_MOEDAS):
         return moedas
 
-    arquivo = open(ARQ_MOEDAS, "r", encoding="utf-8")
+    arquivo = open(ARQ_MOEDAS, "r", encoding=ENCODING)
 
     for linha in arquivo:
         linha = linha.strip()
@@ -140,7 +143,7 @@ def carregar_moedas():
 
 
 def salvar_moedas(moedas):
-    arquivo = open(ARQ_MOEDAS, "w", encoding="utf-8")
+    arquivo = open(ARQ_MOEDAS, "w", encoding=ENCODING)
 
     for nome, dados in moedas.items():
         arquivo.write(
@@ -162,7 +165,7 @@ def registrar_extrato(cpf, sinal, valor, moeda, cotacao, taxa, carteira):
         f"{carteira['ETH']:.6f};{carteira['XRP']:.2f}"
     )
 
-    arquivo = open(ARQ_EXTRATO, "a", encoding="utf-8")
+    arquivo = open(ARQ_EXTRATO, "a", encoding=ENCODING)
     arquivo.write(linha + "\n")
     arquivo.close()
 
@@ -174,7 +177,7 @@ def ler_extrato(cpf):
     if not os.path.exists(ARQ_EXTRATO):
         return linhas
 
-    arquivo = open(ARQ_EXTRATO, "r", encoding="utf-8")
+    arquivo = open(ARQ_EXTRATO, "r", encoding=ENCODING)
 
     for linha in arquivo:
         linha = linha.strip()

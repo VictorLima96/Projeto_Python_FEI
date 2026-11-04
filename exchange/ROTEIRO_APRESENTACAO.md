@@ -14,7 +14,7 @@ python exchange.py
 Se você apagar a pasta `dados`, o programa **recria** ela com um investidor de teste:
 
 | CPF | Senha | Nome |
-|---|---|---|
+| --- | --- | --- |
 | `12345678900` | `123456` | Victor Lima |
 | `98765432100` | `654321` | Maria Souza |
 
@@ -22,7 +22,7 @@ Se você apagar a pasta `dados`, o programa **recria** ela com um investidor de 
 
 ## 2. Estrutura do projeto
 
-```
+```text
 exchange/
   exchange.py            -> o programa principal: só menus e navegação
   funcoes.py             -> as regras: arquivo, login, saldo, extrato, compra, venda
@@ -38,21 +38,21 @@ exchange/
 
 **`investidores.txt`** — uma linha por investidor:
 
-```
+```text
 cpf;nome;senha;reais;btc;eth;xrp
 12345678900;Victor Lima;123456;1000.00;0.00000000;0.00000000;0.00
 ```
 
 **`moedas.txt`** — uma linha por moeda:
 
-```
+```text
 nome;cotacao;taxa_compra;taxa_venda
 BTC;350000.00;0.0200;0.0300
 ```
 
 **`extrato.txt`** — uma linha por operação (só cresce, nunca é reescrito):
 
-```
+```text
 cpf;data;hora;sinal;valor;moeda;cotacao;taxa;reais;btc;eth;xrp
 12345678900;31-10-2026;11:13;+;500.00000000;REAL;0.00;0.00;1500.00;0.00000000;0.000000;0.00
 ```
@@ -65,7 +65,7 @@ O separador é `;` porque nome e data nunca têm ponto e vírgula. Na leitura eu
 
 ### 3.1 Login
 
-```
+```text
 CPF (só os 11 números) -> valida len(cpf) == 11 e cpf.isdigit()
 Senha (6 dígitos)      -> valida len(senha) == 6 e senha.isdigit()
 ```
@@ -89,7 +89,7 @@ investidores["12345678900"]["carteira"]
 Lê o `extrato.txt` linha por linha e **filtra pelo CPF**. Cada linha vira uma operação:
 
 | Coluna | Significado |
-|---|---|
+| --- | --- |
 | data / hora | momento da operação (`datetime.now()`) |
 | sinal | `+` entrou, `-` saiu |
 | valor | quantidade movimentada (reais em depósito/saque, moeda em compra/venda) |
@@ -116,7 +116,7 @@ Sempre registra no extrato e chama `salvar_investidores()` — ou seja, grava no
 
 O usuário digita **quanto quer gastar em reais**. A taxa é cobrada **por cima**:
 
-```
+```text
 valor_investido = 100.00
 taxa            = 100.00 * 2%  = 2.00
 total debitado  = 102.00
@@ -135,7 +135,7 @@ carteira["BTC"] += quantidade
 
 O usuário digita **a quantidade da moeda**. A taxa sai do valor bruto:
 
-```
+```text
 quantidade = 0.00028571 BTC
 bruto      = 0.00028571 * 350000 = 99.9985
 taxa       = 99.9985 * 3%        = 3.00
@@ -170,7 +170,7 @@ Se a conta der zero ou negativo (preço muito baixo), força `0.01`.
 Use esta tabela se o professor perguntar "onde você usou X".
 
 | Conceito | Aula | Onde está no código |
-|---|---|---|
+| --- | --- | --- |
 | Variáveis, tipos, `input`/`print`, f-string, `%` | 01 | todo o projeto |
 | Teste de mesa | 02 | as contas de compra/venda |
 | `if`/`else`, validações | 03 | login, saldo insuficiente, quantidade inválida |
@@ -203,7 +203,7 @@ Use esta tabela se o professor perguntar "onde você usou X".
 ### Roteiro minuto a minuto
 
 | Tempo | O que mostrar | O que falar |
-|---|---|---|
+| --- | --- | --- |
 | 0:00–0:30 | Pasta do projeto | "Esse é meu projeto de exchange de criptomoedas. Ele roda no console, em Python, e guarda tudo em arquivos `.txt` para não perder dados." |
 | 0:30–1:00 | `exchange.py` e `funcoes.py` | "Separei em dois arquivos: um só com os menus e outro com as regras, usando módulos." |
 | 1:00–1:40 | Login **errado** e depois **certo** | "O CPF tem que ter 11 números, sem pontos, e a senha 6 dígitos. Se errar, ele avisa e deixa tentar de novo." |
@@ -220,7 +220,7 @@ Use esta tabela se o professor perguntar "onde você usou X".
 ### Números para usar (dão conta redonda)
 
 | Passo | Resultado |
-|---|---|
+| --- | --- |
 | Saldo inicial | R$ 1000,00 |
 | Depositar 500 | R$ 1500,00 |
 | Comprar 100 em BTC (cotação 350.000, taxa 2%) | debita R$ 102,00 → R$ 1398,00 e 0,00028571 BTC |
