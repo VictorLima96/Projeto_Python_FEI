@@ -203,7 +203,6 @@ def registrar_extrato(cpf, sinal, valor, moeda, cotacao, taxa, carteira):
 
 
 def ler_extrato(cpf):
-    with open(temporario, "w", encoding=ENCODING) as arquivo:
     linhas = []
 
     if not os.path.exists(ARQ_EXTRATO):
