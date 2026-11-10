@@ -8,6 +8,7 @@
 import os
 import random
 import getpass
+import math
 from datetime import datetime
 
 ENCODING = "utf-8"
@@ -98,18 +99,24 @@ def carregar_investidores():
 
 
 def salvar_investidores(investidores):
-    # sobrescreve o arquivo inteiro com o estado atual da memória
-    arquivo = open(ARQ_INVESTIDORES, "w", encoding=ENCODING)
+    temporario = ARQ_INVESTIDORES + ".tmp"
 
-    for cpf, dados in investidores.items():
-        c = dados["carteira"]
-        arquivo.write(
-            f"{cpf};{dados['nome']};{dados['senha']};"
-            f"{c['REAL']:.2f};{c['BTC']:.8f};{c['ETH']:.6f};{c['XRP']:.2f}\n"
-        )
+    with open(temporario, "w", encoding=ENCODING) as arquivo:
+        for cpf, dados in investidores.items():
+            c = dados["carteira"]
 
-    arquivo.close()
+            arquivo.write(
+                f"{cpf};{dados['nome']};{dados['senha']};"
+                f"{c['REAL']:.2f};"
+                f"{c['BTC']:.8f};"
+                f"{c['ETH']:.6f};"
+                f"{c['XRP']:.2f}\n"
+            )
 
+        arquivo.flush()
+        os.fsync(arquivo.fileno())
+
+    os.replace(temporario, ARQ_INVESTIDORES)
 
 def carregar_moedas():
     moedas = {}
@@ -144,14 +151,38 @@ def carregar_moedas():
 
 
 def salvar_moedas(moedas):
-    arquivo = open(ARQ_MOEDAS, "w", encoding=ENCODING)
+    temporario = ARQ_MOEDAS + ".tmp"
 
-    for nome, dados in moedas.items():
-        arquivo.write(
-            f"{nome};{dados['cotacao']:.2f};{dados['taxa_compra']:.4f};{dados['taxa_venda']:.4f}\n"
-        )
+    with open (temporario, "w", encoding=ENCODING) as arquivo:
+        for nome, dados in moedas.items():
+            arquivo.write(
+                f"{nome};"
+                f"{dados['cotacao']:.2f};"
+                f"{dados['taxa_compra']:.4f};"
+                f"{dados['taxa_venda']:.4f}\n"
+            )
 
-    arquivo.close()
+        arquivo.flush()
+        os.fsync(arquivo.fileno())
+
+    os.replace(temporario, ARQ_MOEDAS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def registrar_extrato(cpf, sinal, valor, moeda, cotacao, taxa, carteira):
@@ -172,7 +203,7 @@ def registrar_extrato(cpf, sinal, valor, moeda, cotacao, taxa, carteira):
 
 
 def ler_extrato(cpf):
-    # devolve só as linhas do investidor logado
+    with open(temporario, "w", encoding=ENCODING) as arquivo:
     linhas = []
 
     if not os.path.exists(ARQ_EXTRATO):
@@ -269,11 +300,19 @@ def pedir_valor(mensagem):
     try:
         valor = float(texto)
     except ValueError:
-        print("Valor inválido! Digite só números (ex: 150.50).")
+        print("Valor inválido! Digite apenas números.")
+        return None
+
+    if not math.isfinite(valor):
+        print("Valor inválido! Use um número finito.")
         return None
 
     if valor <= 0:
         print("O valor precisa ser maior que zero.")
+        return None
+
+    if round(valor, 2) != valor:
+        print("O valor precisa ter no máximo 2 casas decimais.")
         return None
 
     return valor
@@ -430,17 +469,28 @@ def comprar(cpf, investidores, moedas):
         return
 
     # a taxa é cobrada em cima do valor investido, então o desconto é maior
-    taxa = valor * taxa_compra
-    total = valor + taxa
+    taxa = round(valor * taxa_compra, 2)
+    total = round(valor + taxa, 2)
 
     if total > carteira["REAL"]:
         print(f"Saldo insuficiente! Você precisa de R$ {total:.2f} (valor + taxa) e tem R$ {carteira['REAL']:.2f}.")
         return
 
-    quantidade = round(valor / cotacao, 8)
+    casas = CASAS[moeda]
 
-    carteira["REAL"] = round(carteira["REAL"] - total, 2)
-    carteira[moeda] = round(carteira[moeda] + quantidade, 8)
+    quantidade = round(valor / cotacao, casas)
+
+    if quantidade <= 0:
+        print("Valor muito pequeno para comprar essa moeda.")
+        return
+
+    carteira["REAL"] = round(
+        carteira["REAL"] - total, 2
+    )
+
+    carteira[moeda] = round(
+        carteira[moeda] + quantidade, casas
+    )
 
     registrar_extrato(cpf, "+", quantidade, moeda, cotacao, taxa, carteira)
     salvar_investidores(investidores)
@@ -450,7 +500,6 @@ def comprar(cpf, investidores, moedas):
     print(f"Taxa de compra ({taxa_compra * 100:.0f}%): R$ {taxa:.2f}")
     print(f"Total debitado: R$ {total:.2f}")
     mostrar_saldos(cpf, investidores)
-
 
 def vender(cpf, investidores, moedas):
     print("\n===== VENDA =====")
@@ -470,7 +519,9 @@ def vender(cpf, investidores, moedas):
 
     print(f"Você tem {formatar(carteira[moeda], moeda)} {moeda}.")
 
-    texto = input(f"Quanto você quer vender de {moeda}? ").strip().replace(",", ".")
+    texto = input(
+        f"Quanto você quer vender de {moeda}? "
+    ).strip().replace(",", ".")
 
     try:
         quantidade = float(texto)
@@ -478,12 +529,27 @@ def vender(cpf, investidores, moedas):
         print("Quantidade inválida!")
         return
 
+    if not math.isfinite(quantidade):
+        print("Quantidade inválida!")
+        return
+
+    casas = CASAS[moeda]
+
     if quantidade <= 0:
         print("A quantidade precisa ser maior que zero.")
         return
 
-    # 0.00000001 de folga por causa do arredondamento do float
-    if quantidade > carteira[moeda] + 0.00000001:
+
+    if round(quantidade, casas) != quantidade:
+        print(
+            f"Essa moeda aceita no máximo {casas} casas decimais."
+        )
+        return
+
+    quantidade = round(quantidade, casas)
+    saldo_disponivel = round(carteira[moeda], casas)
+
+    if quantidade > saldo_disponivel:
         print("Você não tem tudo isso para vender!")
         return
 
@@ -491,12 +557,13 @@ def vender(cpf, investidores, moedas):
     taxa = bruto * taxa_venda
     receber = bruto - taxa
 
-    carteira[moeda] = round(carteira[moeda] - quantidade, 8)
-    carteira["REAL"] = round(carteira["REAL"] + receber, 2)
+    carteira[moeda] = round(
+        saldo_disponivel - quantidade, casas
+    )
 
-    # se sobrou pó de moeda por arredondamento, zero para não ficar sujeira
-    if carteira[moeda] < 0.00000001:
-        carteira[moeda] = 0.0
+    carteira["REAL"] = round(
+        carteira["REAL"] + receber, 2
+    )
 
     registrar_extrato(cpf, "-", quantidade, moeda, cotacao, taxa, carteira)
     salvar_investidores(investidores)
