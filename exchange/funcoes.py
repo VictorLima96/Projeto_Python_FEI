@@ -167,24 +167,6 @@ def salvar_moedas(moedas):
 
     os.replace(temporario, ARQ_MOEDAS)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def registrar_extrato(cpf, sinal, valor, moeda, cotacao, taxa, carteira):
     # grava UMA linha do extrato. Uso o modo "a" para nunca apagar o histórico.
     agora = datetime.now()
@@ -262,7 +244,6 @@ def mostrar_cotacoes(moedas):
             f" | taxa de venda {dados['taxa_venda'] * 100:.0f}%)"
         )
 
-
 # ---------- ENTRADAS DO USUÁRIO ----------
 
 def pedir_cpf():
@@ -277,7 +258,6 @@ def pedir_cpf():
 
     print("Tentativas esgotadas.")
     return None
-
 
 def pedir_senha():
     for tentativa in range(3):
